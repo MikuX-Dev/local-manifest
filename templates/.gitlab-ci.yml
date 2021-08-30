@@ -23,6 +23,7 @@ stages:
     - git config --global user.name "$GITLAB_USER_NAME"
     - git config --global user.email "$GITLAB_USER_EMAIL"
   script:
+    - mkdir "$SRC_DIR/$CI_COMMIT_REF_NAME" || true
     - cd "$SRC_DIR/$CI_COMMIT_REF_NAME"
     - repo init -u $REPO -b $CI_COMMIT_REF_NAME
     - repo sync -c --force-sync --force-sync --force-remove-dirty --prune
