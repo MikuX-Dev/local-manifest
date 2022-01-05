@@ -53,20 +53,14 @@ stages:
 
 
 .trigger-build:
-  image: "registry.gitlab.e.foundation:5000/e/tools/docker-tools:latest"
   stage: build
-  script:
-    - |
-      curl --request POST \
-        --form token=${TRIGGER_TOKEN} \
-        --form ref=master \
-        --form "variables[BRANCH_NAME]=${CI_COMMIT_REF_NAME}" \
-        --form "variables[DEVICES]=${DEVICES}" \
-        --form "variables[REPO]=${CI_REPOSITORY_URL}" \
-        --form "variables[RELEASE_TYPE]=${RELEASE_TYPE}" \
-        ${BUILD_PROJECT_API_URL}/trigger/pipeline
-  tags:
-    - generic
+  variables:
+    BRANCH_NAME: ${CI_COMMIT_REF_NAME}
+    DEVICES: ${DEVICES}
+    REPO: ${CI_REPOSITORY_URL}
+  trigger:
+    project: "e/priv/os/build"
+    branch: "master"
   rules:
     - if: '$CI_COMMIT_TAG'
       when: always
