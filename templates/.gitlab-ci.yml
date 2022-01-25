@@ -57,7 +57,7 @@ stages:
   variables:
     BRANCH_NAME: ${CI_COMMIT_REF_NAME}
     DEVICES: ${DEVICES}
-    REPO: ${CI_REPOSITORY_URL}
+    REPO: ${CI_PROJECT_URL}
   trigger:
     project: "e/priv/os/build"
     branch: "master"
