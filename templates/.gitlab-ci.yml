@@ -4,6 +4,7 @@ variables:
 stages:
   - manifest
   - test
+  - qa
   - build
 
 .update-manifest:
@@ -63,8 +64,20 @@ stages:
     branch: "master"
   rules:
     - if: '$CI_COMMIT_TAG'
-      when: always
+      when: manual
     - when: never
+
+.trigger-build-qa-dev:
+  stage: qa
+  extends: .trigger-build
+  variables:
+    RELEASE_TYPE: dev
+
+.trigger-build-qa-stable:
+  stage: qa
+  extends: .trigger-build
+  variables:
+    RELEASE_TYPE: stable
 
 .trigger-build-dev:
   extends: .trigger-build
