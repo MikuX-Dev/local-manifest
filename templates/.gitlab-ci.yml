@@ -26,7 +26,7 @@ stages:
   script:
     - mkdir "$SRC_DIR/$CI_COMMIT_REF_NAME" || true
     - cd "$SRC_DIR/$CI_COMMIT_REF_NAME"
-    - repo init -u $REPO -b $CI_COMMIT_REF_NAME
+    - repo init --depth 1 -u $REPO -b $CI_COMMIT_REF_NAME
     - repo sync -c --force-sync --force-sync --force-remove-dirty --prune
     - repo manifest -r -o $CI_PROJECT_DIR/default.xml
     - cd $CI_PROJECT_DIR
