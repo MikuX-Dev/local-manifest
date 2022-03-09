@@ -9,7 +9,7 @@ stages:
 
 .update-manifest:
   image:
-    name: "registry.gitlab.e.foundation:5000/e/os/docker-lineage-cicd:prod"
+    name: "registry.gitlab.e.foundation/e/os/docker-lineage-cicd:prod"
     entrypoint: [""]
   stage: manifest
   before_script:
@@ -20,7 +20,7 @@ stages:
     - chmod 700 ~/.ssh
     - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - git remote set-url origin ssh://git@gitlab.e.foundation:2222/$CI_PROJECT_PATH.git
+    - git remote set-url origin ssh://git@gitlab.e.foundation/$CI_PROJECT_PATH.git
     - git config --global user.name "$GITLAB_USER_NAME"
     - git config --global user.email "$GITLAB_USER_EMAIL"
   script:
@@ -40,7 +40,7 @@ stages:
     - generate-e-manifest
 
 .check-version:
-  image: "registry.gitlab.e.foundation:5000/e/tools/docker-tools:latest"
+  image: "registry.gitlab.e.foundation/e/tools/docker-tools:latest"
   stage: test
   script:
     - curl -s https://gitlab.e.foundation/e/os/releases/-/raw/master/check-version.sh -o check-version.sh && chmod +x check-version.sh
