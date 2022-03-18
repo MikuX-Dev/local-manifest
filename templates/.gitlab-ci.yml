@@ -67,18 +67,6 @@ stages:
       when: manual
     - when: never
 
-.trigger-build-qa-dev:
-  stage: qa
-  extends: .trigger-build
-  variables:
-    RELEASE_TYPE: dev
-
-.trigger-build-qa-stable:
-  stage: qa
-  extends: .trigger-build
-  variables:
-    RELEASE_TYPE: stable
-
 .trigger-build-dev:
   extends: .trigger-build
   variables:
