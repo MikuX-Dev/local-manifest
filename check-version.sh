@@ -8,7 +8,7 @@ then
   VENDOR="android_vendor_cm"
 fi
 
-if [[ $CI_COMMIT_TAG == *"s"* ]]
+if [[ $CI_COMMIT_TAG == *"s"* ]] || [[ $CI_COMMIT_TAG == *"t"* ]]
 then
   VERSION_FILE="config/version.mk"
 fi
