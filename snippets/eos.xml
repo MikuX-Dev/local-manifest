@@ -2,23 +2,23 @@
 <manifest>
 	
     <remote name="fdroid" 
-	        fetch="https://gitlab.com/fdroid/" />
+	    fetch="https://gitlab.com/fdroid/" />
 
     <remote name="sfx-Android" 
-	        fetch="https://github.com/sfX-Android/" />
+	    fetch="https://github.com/sfX-Android/" />
  
     <remote name="The-Bot-BB" 
-	        fetch="https://github.com/The-Bot-BB/"
-	        revision="main" />
+	    fetch="https://github.com/The-Bot-BB/"
+	    revision="main" />
 
     <remote name="codelinaro"
-	        fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
-	        revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
+	    fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
+	    revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
 
 
     <!-- KERNEL -->
     <!-- project name="The-Bot-BB/kernel-xiaomi-ysl" path="device/kernel/ysl" remote="github" /> -->
-	<project name="kernel/msm-4.9" path="device/kernel/ysl" remote="codelinaro" revision="LA.UM.8.6.2.r1-09500-89xx.0" />
+    <project name="kernel/msm-4.9" path="device/kernel/ysl" remote="codelinaro" revision="LA.UM.8.6.2.r1-09500-89xx.0" />
 
     <!-- DEVICE TREES -->
     <project name="The-Bot-BB/device-xiaomi-ysl" path="device/xiaomi/ysl" remote="github" />
@@ -33,8 +33,8 @@
     <!-- project name="android_vendor_e-mod" path="vendor/e-mod" remote="github" /> -->
 
     <!-- F-Droid (OPTIONAL - see topic "F-Droid") -->    
-    <!-- project name="android_vendor_fdroid" path="vendor/fdroid" remote="github" revision="main" /> -->
-    <!-- project path="packages/apps/F-DroidPrivilegedExtension" name="privileged-extension.git" remote="fdroid" revision="master" /> -->
+    <!-- project name="android_vendor_fdroid" path="vendor/fdroid" remote="github" revision="master" /> -->
+    <!-- project name="privileged-extension.git" path="packages/apps/F-DroidPrivilegedExtension" remote="fdroid" revision="master" /> -->
 
 </manifest>
 
