@@ -15,6 +15,18 @@
 	    fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
 	    revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
 
+    <!-- <remote name="Professor-Berni"
+	    fetch="https://github.com/Professor-Berni/"
+	    revision="master" -->
+	
+    <remote name="CalyxOS"
+	    fetch="https://github.com/CalyxOS/"
+	    revision="android13"
+	    
+    <remote name="BB-BotOS"
+	    fetch="https://github.com/BB-BotOS/"
+	    revision="BotOS-1.0" />
+
 
     <!-- KERNEL -->
     <!-- project name="The-Bot-BB/kernel-xiaomi-ysl" path="device/kernel/ysl" remote="github" /> -->
@@ -28,6 +40,11 @@
 
     <!-- /e/ vendor repo -->
     <project name="steadfasterX/android_vendor_e" path="vendor/e" remote="e" />
+
+    <-- FDroid -->
+    <-- project name="CalyxOS/platform_prebuilts_calyx_fdroid" path="vendor/fdroid" remote="github" /> -->
+	   
+    <project name="BB-BotOS/platform_packages_apps_SetupWizard" path="" remote="github" />
 
     <!-- /e/ vendor repo mods (OPTIONAL) -->
     <!-- project name="android_vendor_e-mod" path="vendor/e-mod" remote="github" /> -->
