@@ -30,13 +30,13 @@ repo sync --no-clone-bundle
 
 ### Set up environment for Build
 ```
-. build/envsetup.sh
+source build/envsetup.sh
 ```
 ### Choose a target
 ```
-lunch aosp_$device-userdebug
+lunch lineage_$device-userdebug
 ```
 ### Build the code
 ```
-mka bacon -jX
+mka eos -jX
 ```
