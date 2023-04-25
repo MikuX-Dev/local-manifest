@@ -25,7 +25,7 @@ repo init --depth=1 -u https://github.com/The-Bot-BB/local-manifest.git -b main
 
 ### Download the source
 ```bash
-repo sync --no-clone-bundle 
+repo sync --no-clone-bundle -jX
 ```
 
 ### Set up environment for Build
