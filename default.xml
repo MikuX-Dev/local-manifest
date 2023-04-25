@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="aosp" fetch="https://android.googlesource.com" review="android-review.googlesource.com" revision="refs/tags/android-12.1.0_r22"/>
-  <remote name="e" fetch="https://gitlab.e.foundation" revision="refs/heads/v1-s"/>
-  <remote name="e-priv" fetch="ssh://git@gitlab.e.foundation:2222" revision="refs/heads/v1-s"/>
-  <remote name="github" fetch="https://github.com" review="review.lineageos.org"/>
-  <remote name="private" fetch="ssh://git@github.com"/>
+  <remote name="aosp" 
+          fetch="https://android.googlesource.com" 
+          review="android-review.googlesource.com" 
+          revision="refs/tags/android-12.1.0_r22" />
   
-  <default remote="github" revision="refs/heads/lineage-19.1" sync-j="4" sync-c="true"/>
+  <remote name="e" 
+          fetch="https://gitlab.e.foundation" 
+          revision="refs/heads/v1-s" />
+  
+  <remote name="e-priv" 
+          fetch="ssh://git@gitlab.e.foundation:2222" 
+          revision="refs/heads/v1-s" />
+  
+  <remote name="github" 
+          fetch="https://github.com" 
+          review="review.lineageos.org" />
+  
+  <remote name="private" 
+          fetch="ssh://git@github.com" />
+  
+  <default remote="github" 
+           revision="refs/heads/lineage-19.1" 
+           sync-j="4" 
+           sync-c="true" />
+  
+  <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r22" />
+  <contactinfo bugurl="go/repo-bug" />
+  
+  <!-- AOSP Projects -->
   
   <project name="LineageOS/android_bionic" path="bionic" revision="6e6ed4d6cd4081f0c755d2548a4752d9fcc157a2" upstream="refs/heads/lineage-19.1" dest-branch="refs/heads/lineage-19.1" groups="pdk"/>
   <project name="LineageOS/android_build_soong" path="build/soong" revision="26c165bf6e9c8af59d0f7759683569dfafd0867a" upstream="refs/heads/lineage-19.1" dest-branch="refs/heads/lineage-19.1" groups="pdk,tradefed">
@@ -1214,9 +1236,7 @@
   <project name="toolchain/pgo-profiles" remote="aosp" revision="739026928bc7d99f4cccd96e0a7a42bec79de254" upstream="refs/tags/android-12.1.0_r22" dest-branch="refs/tags/android-12.1.0_r22" groups="pdk"/>
   <project name="tools/platform-compat" remote="aosp" revision="cfa5a189e9671992ba7ad5b8de5d59826544a592" upstream="refs/tags/android-12.1.0_r22" dest-branch="refs/tags/android-12.1.0_r22" groups="pdk-cw-fs,pdk-fs,pdk"/>
   
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload"/>
-  
-  <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r22"/>
-  
-  <contactinfo bugurl="go/repo-bug"/>
+  <include name="snippets/eos.xml" />
+    
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
