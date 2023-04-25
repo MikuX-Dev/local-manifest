@@ -26,7 +26,7 @@ repo init -u https://github.com/The-Bot-BB/manifest.git -b BotOS-1.0
 
 ### Download the source
 ```bash
-repo sync 
+repo sync -jX --no-tags --no-clone-bundle 
 ```
 
 ### Set up environment for Build
