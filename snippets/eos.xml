@@ -12,7 +12,7 @@
 	        revision="main" />
 
     <remote name="codelinaro"
-	        fetch="https://git.codelinaro.org/clo/la/"
+	        fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
 	        revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
 
 
