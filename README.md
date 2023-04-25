@@ -1,5 +1,7 @@
 # local-manifest
 
+To get started, you'll need to get
+familiar with [Repo](https://source.android.com/source/using-repo.html) and [Version Control with Git](https://source.android.com/source/version-control.html).
 ### Create a directory for the source files
 
 * You can name this directory however you want, just remember to replace
