@@ -1236,7 +1236,8 @@
   <project name="toolchain/pgo-profiles" remote="aosp" revision="739026928bc7d99f4cccd96e0a7a42bec79de254" upstream="refs/tags/android-12.1.0_r22" dest-branch="refs/tags/android-12.1.0_r22" groups="pdk"/>
   <project name="tools/platform-compat" remote="aosp" revision="cfa5a189e9671992ba7ad5b8de5d59826544a592" upstream="refs/tags/android-12.1.0_r22" dest-branch="refs/tags/android-12.1.0_r22" groups="pdk-cw-fs,pdk-fs,pdk"/>
   
+  <include name="snippets/calyxos.xml"/>
   <include name="snippets/eos.xml" />
-    
+   
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
