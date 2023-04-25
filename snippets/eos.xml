@@ -13,7 +13,7 @@
 
     <remote name="codelinaro"
 	        fetch="https://git.codelinaro.org/clo/la/"
-	        revision="LA.UM.8.6.2.r1-09500-89xx.0" />
+	        revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
 
 
     <!-- KERNEL -->
