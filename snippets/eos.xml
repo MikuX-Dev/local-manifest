@@ -6,6 +6,10 @@
 
     <remote name="sfx-Android" 
 	    fetch="https://github.com/sfX-Android/" />
+    
+    <remote name="codelinaro"
+	    fetch="https://git.codelinaro.org/clo/la/"
+	    revision="LA.UM.8.6.2.r1-09500-89xx.0"
  
     <remote name="The-Bot-BB" 
 	    fetch="https://github.com/The-Bot-BB/"
@@ -13,7 +17,8 @@
 
 
     <!-- KERNEL -->
-    <project name="The-Bot-BB/kernel-xiaomi-ysl" path="device/kernel/ysl" remote="github" />
+    <-- project name="The-Bot-BB/kernel-xiaomi-ysl" path="device/kernel/ysl" remote="github" /> -->
+	<project name="kernel/msm-4.9" path="device/kernel/ysl" remote="codelinaro" revision="LA.UM.8.6.2.r1-09500-89xx.0" />
 
     <!-- DEVICE TREES -->
     <project name="The-Bot-BB/device-xiaomi-ysl" path="device/xiaomi/ysl" remote="github" />
