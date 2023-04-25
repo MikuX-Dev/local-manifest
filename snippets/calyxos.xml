@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>      
       
-      <remote name="CalyxOS"
+    <remote name="CalyxOS"
 	        fetch="https://github.com/CalyxOS/"
 	        revision="refs/heads/android13" />  
     
