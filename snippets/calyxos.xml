@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>      
+      
+      <remote name="CalyxOS"
+	        fetch="https://github.com/CalyxOS/"
+	        revision="android13" />  
+    
+    <!-- CalyxOS Apps -->
+	   
+    <project name="BB-BotOS/platform_packages_apps_SetupWizard" path="" remote="github" />
+
+    <!-- FDroid CalyxOS -->
+    <project name="CalyxOS/platform_prebuilts_calyx_fdroid" path="vendor/fdroid" remote="github" />
+
+</manifest>

@@ -2,30 +2,26 @@
 <manifest>
 	
     <remote name="fdroid" 
-	    fetch="https://gitlab.com/fdroid/" />
+	        fetch="https://gitlab.com/fdroid/" />
 
     <remote name="sfx-Android" 
-	    fetch="https://github.com/sfX-Android/" />
+	        fetch="https://github.com/sfX-Android/" />
  
     <remote name="The-Bot-BB" 
-	    fetch="https://github.com/The-Bot-BB/"
-	    revision="main" />
+	        fetch="https://github.com/The-Bot-BB/"
+	        revision="main" />
 
     <remote name="codelinaro"
-	    fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
-	    revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
+	        fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
+	        revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
 
     <!-- <remote name="Professor-Berni"
-	    fetch="https://github.com/Professor-Berni/"
-	    revision="master" -->
-	
-    <remote name="CalyxOS"
-	    fetch="https://github.com/CalyxOS/"
-	    revision="android13"
+	        fetch="https://github.com/Professor-Berni/"
+	        revision="master" -->
 	    
     <remote name="BB-BotOS"
-	    fetch="https://github.com/BB-BotOS/"
-	    revision="BotOS-1.0" />
+            fetch="https://github.com/BB-BotOS/"
+	        revision="BotOS-1.0" />
 
 
     <!-- KERNEL -->
@@ -40,11 +36,6 @@
 
     <!-- /e/ vendor repo -->
     <project name="steadfasterX/android_vendor_e" path="vendor/e" remote="e" />
-
-    <-- FDroid -->
-    <-- project name="CalyxOS/platform_prebuilts_calyx_fdroid" path="vendor/fdroid" remote="github" /> -->
-	   
-    <project name="BB-BotOS/platform_packages_apps_SetupWizard" path="" remote="github" />
 
     <!-- /e/ vendor repo mods (OPTIONAL) -->
     <!-- project name="android_vendor_e-mod" path="vendor/e-mod" remote="github" /> -->
