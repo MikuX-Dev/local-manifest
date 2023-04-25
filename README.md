@@ -16,11 +16,11 @@ cd WORKSPACE
 
 ### Install Repo in the created directory
 ```bash
-repo init -u https://github.com/The-Bot-BB/local-manifest.git main
+repo init -u https://github.com/The-Bot-BB/local-manifest.git -b main
 ```
 ### shallow clone
 ```
-repo init --depth=1 -u https://github.com/The-Bot-BB/local-manifest.git b main
+repo init --depth=1 -u https://github.com/The-Bot-BB/local-manifest.git -b main
 ```
 
 ### Download the source
