@@ -1,5 +1,3 @@
-# local-manifest
-
 BotOS
 =====
 
