@@ -1,5 +1,10 @@
 # local-manifest
 
+### Create a directory for the source files
+
+* You can name this directory however you want, just remember to replace
+* WORKSPACE with your directory for the rest of this guide.
+* This can be located anywhere (as long as the fs is case-sensitive)
 ```
 mkdir WORKSPACE
 ```
