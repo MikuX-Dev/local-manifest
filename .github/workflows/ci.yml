@@ -1,0 +1,28 @@
+name: Update from GitLab
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+    
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v2
+        with:
+          repository: BB-BotOS/manifest.git
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Add GitLab remote
+        run: |
+          git remote add gitlab https://gitlab.e.foundation/e/os/android_build.git
+      
+      - name: Fetch changes from GitLab
+        run: git fetch gitlab
+      
+      - name: Merge changes from GitLab into GitHub repository
+        run: git merge gitlab/v1-s --allow-unrelated-histories
+      
+      - name: Push changes to GitHub repository
+        run: git push origin BotOS-1.0
