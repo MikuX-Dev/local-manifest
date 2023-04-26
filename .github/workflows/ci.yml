@@ -1,9 +1,12 @@
-name: Update from GitLab
+name: Update from GitLab to GitHub
 
 on:
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight
-    
+  push:
+    branches:
+      - main # replace with the branch you want to update
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -11,18 +14,18 @@ jobs:
       - name: Checkout GitHub repository
         uses: actions/checkout@v2
         with:
-          repository: BB-BotOS/manifest.git
+          repository: The-Bot-BB/local-manifest # replace with your GitHub repository
           token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Add GitLab remote
         run: |
-          git remote add gitlab https://gitlab.e.foundation/e/os/android_build.git
+          git remote add gitlab https://gitlab.e.foundation/e/os/android.git # replace with your GitLab repository URL
       
       - name: Fetch changes from GitLab
         run: git fetch gitlab
       
       - name: Merge changes from GitLab into GitHub repository
-        run: git merge gitlab/v1-s --allow-unrelated-histories
+        run: git merge gitlab/v1-t --allow-unrelated-histories # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
-        run: git push origin BotOS-1.0
+        run: git push origin main # replace with the branch you want to push the changes to
