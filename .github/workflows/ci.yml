@@ -10,6 +10,12 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+     defaults:
+      run:
+        shell: bash
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
       - name: Checkout GitHub repository
         uses: actions/checkout@v2
