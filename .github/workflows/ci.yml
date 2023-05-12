@@ -22,7 +22,7 @@ jobs:
       
       - name: Add GitLab remote
         run: |
-          git remote add gitlab https://gitlab.e.foundation/e/os/android.git 
+          git remote add gitlab https://gitlab.e.foundation/e/os/releases.git 
 
 
       - name: Fetch changes from GitLab
