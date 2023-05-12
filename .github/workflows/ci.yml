@@ -25,7 +25,7 @@ jobs:
         run: git fetch gitlab
       
       - name: Merge changes from GitLab into GitHub repository
-        run: git merge gitlab/v1-t --allow-unrelated-histories # replace with the branch you want to merge
+        run: git merge gitlab/v1-s --allow-unrelated-histories # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
         run: git push origin main # replace with the branch you want to push the changes to
