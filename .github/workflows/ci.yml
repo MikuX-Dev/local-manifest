@@ -27,7 +27,7 @@ jobs:
           USER_NAME: The-Bot-BB # replace with your name
 
       - name: Set up Node.js 16.x
-        uses: actions/setup-node@v2.5.4
+        uses: actions/setup-node@v2
         with:
           node-version: 16.x
 
