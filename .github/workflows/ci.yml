@@ -20,7 +20,7 @@ jobs:
       - name: Checkout GitHub repository
         uses: actions/checkout@v2
         with:
-          repository: local-manifest # replace with your GitHub repository
+          repository: The-Bot-BB/local-manifest # replace with your GitHub repository
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: main # replace with the branch you want to update
           fetch-depth: 0 # set fetch depth to 0 to allow fetching all branches and tags
