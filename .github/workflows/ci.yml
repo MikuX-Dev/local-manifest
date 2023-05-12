@@ -39,7 +39,10 @@ jobs:
         run: git fetch gitlab
       
       - name: Merge changes from GitLab into GitHub repository
-        run: git merge gitlab/v1-s --allow-unrelated-histories --no-edit # replace with the branch you want to merge
+        run: |
+          git config user.email "you@example.com" # replace with your email address
+          git config user.name "Your Name" # replace with your name
+          git merge gitlab/v1-s --allow-unrelated-histories --no-edit # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
         run: git push origin main
