@@ -14,16 +14,15 @@ jobs:
       - name: Checkout GitHub repository
         uses: actions/checkout@v2
         with:
-          repository: The-Bot-BB/local-manifest # replace with your GitHub repository
+          repository: local-manifest # replace with your GitHub repository
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: main # replace with the branch you want to update
-          name: checkout
-          
-      - name: Set git user email and name
-        run: |
-          git config --local user.email abinishanth3464@gmail.com
-          git config --local user.name The-Bot-BB
-          
+          fetch-depth: 0 # set fetch depth to 0 to allow fetching all branches and tags
+        env:
+          CI: true # set CI environment variable to true to bypass git prompt for email and username
+          USER_EMAIL: abinishanth3464@gmail.com # replace with your email address
+          USER_NAME: The-Bot-BB # replace with your name
+      
       - name: Add GitLab remote
         run: |
           git remote add gitlab https://gitlab.e.foundation/e/os/releases.git 
@@ -33,7 +32,10 @@ jobs:
         run: git fetch gitlab
       
       - name: Merge changes from GitLab into GitHub repository
-        run: git merge gitlab/v1-s # replace with the branch you want to merge
+        run: git merge gitlab/v1-s --allow-unrelated-histories # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
-        run: git push origin main # replace with the branch you want to push the changes to 
+        run: |
+          git config --local user.email abinishanth3464@gmail.com
+          git config --local user.name The-Bot-BB
+          git push origin main
