@@ -18,10 +18,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: main # replace with the branch you want to update
           name: checkout
-          config:
-            user.name: The-Bot-BB
-            user.email: abinishanth3464@gmail.com
-      
+          
+      - name: Set git user email and name
+        run: |
+          git config --local user.email abinishanth3464@gmail.com
+          git config --local user.name The-Bot-BB
+          
       - name: Add GitLab remote
         run: |
           git remote add gitlab https://gitlab.e.foundation/e/os/releases.git 
@@ -31,7 +33,7 @@ jobs:
         run: git fetch gitlab
       
       - name: Merge changes from GitLab into GitHub repository
-        run: git merge gitlab/v1-s --allow-unrelated-histories # replace with the branch you want to merge
+        run: git merge gitlab/v1-s # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
-        run: git push origin main
+        run: git push origin main # replace with the branch you want to push the changes to 
