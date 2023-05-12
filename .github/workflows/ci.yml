@@ -10,6 +10,9 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     strategy:
       matrix:
         node-version: [16.x]
@@ -25,24 +28,24 @@ jobs:
           CI: true # set CI environment variable to true to bypass git prompt for email and username
           USER_EMAIL: abinishanth3464@gmail.com # replace with your email address
           USER_NAME: The-Bot-BB # replace with your name
-
-      - name: Set up Node.js 16.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-
+      
       - name: Add GitLab remote
         run: |
           git remote add gitlab https://gitlab.e.foundation/e/os/releases.git 
 
+
       - name: Fetch changes from GitLab
         run: git fetch gitlab
       
-      - name: Merge changes from GitLab into GitHub repository
+      - name: Configure Git
         run: |
           git config user.email abinishanth3464@gmail.com # replace with your email address
           git config user.name The-Bot-BB # replace with your name
+      
+      - name: Merge changes from GitLab into GitHub repository
+        run: |
           git merge gitlab/v1-s --allow-unrelated-histories --no-edit # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
-        run: git push origin main
+        run: |
+          git push origin main
