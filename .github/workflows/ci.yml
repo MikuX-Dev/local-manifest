@@ -16,6 +16,8 @@ jobs:
         with:
           repository: The-Bot-BB/local-manifest # replace with your GitHub repository
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main # replace with the branch you want to update
+          name: checkout
           config:
             user.name: The-Bot-BB
             user.email: abinishanth3464@gmail.com
