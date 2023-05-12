@@ -22,8 +22,9 @@ jobs:
       
       - name: Add GitLab remote
         run: |
-          git remote add gitlab https://gitlab.e.foundation/e/os/android.git # replace with your GitLab repository URL
-      
+          git remote add gitlab https://gitlab.e.foundation/e/os/android.git 
+
+
       - name: Fetch changes from GitLab
         run: git fetch gitlab
       
