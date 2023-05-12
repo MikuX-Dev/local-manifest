@@ -16,6 +16,9 @@ jobs:
         with:
           repository: The-Bot-BB/local-manifest # replace with your GitHub repository
           token: ${{ secrets.GITHUB_TOKEN }}
+          config:
+            user.name: The-Bot-BB
+            user.email: abinishanth3464@gmail.com
       
       - name: Add GitLab remote
         run: |
@@ -28,4 +31,4 @@ jobs:
         run: git merge gitlab/v1-s --allow-unrelated-histories # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
-        run: git push origin main # replace with the branch you want to push the changes to
+        run: git push origin main
