@@ -44,7 +44,7 @@ jobs:
       
       - name: Merge changes from GitLab into GitHub repository
         run: |
-          git merge gitlab/v1-s --allow-unrelated-histories --no-edit # replace with the branch you want to merge
+          git merge gitlab/v1-t --allow-unrelated-histories --no-edit # replace with the branch you want to merge
       
       - name: Push changes to GitHub repository
         run: |
