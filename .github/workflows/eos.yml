@@ -23,10 +23,10 @@ jobs:
           sudo curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
           sudo chmod a+x /usr/local/bin/repo
 
-- name: Download AOSP source code
-  run: |
-    repo init -u https://github.com/MikuX-Dev/local-manifest.git -b main --git-lfs
-    repo sync -j$(nproc --all) --current-branch --no-tags --no-clone-bundle
+      - name: Download AOSP source code
+        run: |
+          repo init -u https://github.com/MikuX-Dev/local-manifest.git -b main --git-lfs
+          repo sync -j$(nproc --all) --current-branch --no-tags --no-clone-bundle
           
 
       - name: Build AOSP
