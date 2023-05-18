@@ -30,7 +30,7 @@ jobs:
  
       - name: Remove file
         run: |
-          git rm .gitlab.yml
+          git rm .gitlab-ci.yml
           
       - name: push changes to github
         run: |
