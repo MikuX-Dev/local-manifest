@@ -25,5 +25,5 @@ jobs:
         run: |
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
           git merge gitlab/master --allow-unrelated-histories 
-          git pull origin master --allow-unrelated-histories  # Added git pull command
+          git pull origin master --rebase  # Modified git pull command with --rebase flag
           git push origin HEAD:master
