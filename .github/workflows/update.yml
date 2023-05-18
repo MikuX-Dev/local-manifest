@@ -1,8 +1,9 @@
 name: Sync GitLab changes to GitHub
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs every day at midnight
+  push:
+    branches:
+      - main  # Adjust this branch name if needed
 
 jobs:
   sync_changes:
