@@ -25,16 +25,6 @@ jobs:
         run: |
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
           git merge gitlab/master --allow-unrelated-histories 
-          git pull origin master --rebase
 
-      - name: Resolve conflicts and continue rebase
-        run: |
-          # Resolve conflicts in snippets/eos.xml manually
-          # Edit the file to resolve the differences, then save it
-
-          git add snippets/eos.xml
-          git rebase --continue
-
-      - name: Push changes to GitHub
-        run: |
+ |
           git push origin HEAD:master
