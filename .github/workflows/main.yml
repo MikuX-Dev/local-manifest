@@ -25,5 +25,5 @@ jobs:
       - name: Merge changes from GitLab to GitHub
         run: |
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
-          git merge gitlab/refs/heads/v1-t --allow-unrelated-histories
+          git merge gitlab/v1-t --allow-unrelated-histories
           git push origin HEAD:main
