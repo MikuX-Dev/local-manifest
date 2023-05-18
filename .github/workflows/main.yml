@@ -19,20 +19,16 @@ jobs:
           git config --global user.email abinishanth3464@gmail.com 
 
       - name: Fetch GitLab changes
-        run: |
-           git remote add gitlab https://gitlab.e.foundation/e/os/releases.git && git fetch gitlab
+        run: git remote add gitlab https://gitlab.e.foundation/e/os/releases.git && git fetch gitlab
 
-      - name: Merge changes from GitLab to GitHub
-        run: |
-          git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
-          git merge gitlab/v1-t --allow-unrelated-histories
-         #git push origin HEAD:main
- 
+      - name: Push changes to GitHub
+        run: git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git  
+      
       - name: Remove file
         run: |
           git rm .gitlab-ci.yml
           
-      - name: push changes to github
+      - name: push changes to github 
         run: |
-          git push origin HEAD:main
- 
+           git push origin 
+          
