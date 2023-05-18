@@ -8,7 +8,7 @@
 	   fetch="https://github.com/sfX-Android/" />
  
     <remote name="MikuX-Dev" 
-	   fetch="https://gitlab.com/MikuX-Dev/" />
+	   fetch="https://gitlab.com/bb-botos/" />
 	   
     <!--remote name="codelinaro"
 	        fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
@@ -21,14 +21,14 @@
             <!-- Project starts -->
 
     <!-- KERNEL -->
-    <project name="MikuX-Dev/kernel_xiaomi_ysl_mikasa" path="device/kernel/ysl" remote="gitlab" />
+    <project name="bb-botos/device-trees-ysl/kernel_xiaomi_ysl_mikasa" path="device/kernel/ysl" remote="gitlab" />
     <!-- project name="kernel/msm-4.9" path="device/kernel/ysl" remote="codelinaro"  /> -->
 
     <!-- DEVICE TREES -->
-    <project name="MikuX-Dev/device-xiaomi-ysl" path="device/xiaomi/ysl" remote="gitlab" />
+    <project name="bb-botos/device-trees-ysl/device-xiaomi-ysl" path="device/xiaomi/ysl" remote="gitlab" />
 
     <!-- VENDOR TREE -->
-    <project name="MikuX-Dev/proprietary_vendor_xiaomi_ysl" path="device/vendor/ysl" remote="gitlab"/>
+    <project name="bb-botos/device-trees-ysl/proprietary_vendor_xiaomi_ysl" path="device/vendor/ysl" remote="gitlab"/>
 
     <!-- /e/ vendor repo -->
     <project name="steadfasterX/android_vendor_e" path="vendor/e" remote="e" />
