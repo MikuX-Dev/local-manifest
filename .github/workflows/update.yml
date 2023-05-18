@@ -15,7 +15,7 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name MikuX-Dev
+          git config --global user.name MikuX-Dev 
           git config --global user.email abinishanth3464@gmail.com
 
       - name: Fetch GitLab changes
@@ -24,5 +24,4 @@ jobs:
       - name: Push changes to GitHub
         run: |
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
-          git push origin gitlab/master:master
-  
+          git push origin gitlab/master:refs/heads/master
