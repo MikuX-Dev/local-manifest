@@ -26,5 +26,12 @@ jobs:
         run: |
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
           git merge gitlab/v1-t --allow-unrelated-histories
-          git push origin HEAD:main
+         #git push origin HEAD:main
  
+      - name: Remove file
+        run: |
+          git rm .gitlab.yml
+          
+      - name: push changes to github
+        run: |
+          git push origin HEAD:main
