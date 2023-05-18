@@ -1328,7 +1328,7 @@
   <project name="toolchain/pgo-profiles" remote="aosp" revision="f94a8791312e6f9e45958f7eb98353f4bbd415da" upstream="refs/tags/android-13.0.0_r43" dest-branch="refs/tags/android-13.0.0_r43" groups="pdk"/>
   <project name="tools/platform-compat" remote="aosp" revision="367afcd07f134693a3446ef37a8f2abd42975f6e" upstream="refs/tags/android-13.0.0_r43" dest-branch="refs/tags/android-13.0.0_r43" groups="pdk-cw-fs,pdk-fs,pdk"/>
   
-  <include name="snippets/botos.xml" />
+
   <include name="snippets/calyxos.xml" />
   <include name="snippets/eos.xml" />
   <include name="remove.xml" />
