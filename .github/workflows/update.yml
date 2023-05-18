@@ -21,7 +21,8 @@ jobs:
       - name: Fetch GitLab changes
         run: git remote add gitlab https://gitlab.e.foundation/e/os/releases.git && git fetch gitlab
 
-      - name: Push changes to GitHub
+      - name: Merge changes from GitLab to GitHub
         run: |
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
-          git push origin gitlab/master:refs/heads/master
+          git merge gitlab/master
+          git push origin HEAD:master
