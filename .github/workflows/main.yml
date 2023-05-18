@@ -27,3 +27,4 @@ jobs:
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
           git merge gitlab/v1-t --allow-unrelated-histories
           git push origin HEAD:main
+ 
