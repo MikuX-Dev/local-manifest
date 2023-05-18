@@ -21,7 +21,7 @@ cd WORKSPACE
 
 ### Install Repo in the created directory
 ```bash
-repo init -u https://github.com/The-Bot-BB/manifest.git -b main
+repo init -u https://github.com/MikuX-Dev/local-manifest.git -b main
 ```
 
 ### Download the source
