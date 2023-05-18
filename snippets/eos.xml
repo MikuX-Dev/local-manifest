@@ -2,18 +2,17 @@
 <manifest>
 	
     <remote name="fdroid" 
-	        fetch="https://gitlab.com/fdroid/" />
+	   fetch="https://gitlab.com/fdroid/" />
 
     <remote name="sfx-Android" 
-	        fetch="https://github.com/sfX-Android/" />
+	   fetch="https://github.com/sfX-Android/" />
  
-    <remote name="The-Bot-BB" 
-	        fetch="https://github.com/The-Bot-BB/"
-	        revision="refs/heads/main" />
-
-    <remote name="codelinaro"
+    <remote name="MikuX-Dev" 
+	   fetch="https://github.com/MikuX-Dev/"
+	   fetch=""
+    <!--remote name="codelinaro"
 	        fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
-	        revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" />
+	        revision="refs/heads/LA.UM.8.6.2.r1-09500-89xx.0" /> -->
 
     <!-- <remote name="Professor-Berni"
 	        fetch="https://github.com/Professor-Berni/"A
@@ -22,14 +21,14 @@
             <!-- Project starts -->
 
     <!-- KERNEL -->
-    <!-- project name="The-Bot-BB/kernel-xiaomi-ysl" path="device/kernel/ysl" remote="github" /> -->
-    <project name="kernel/msm-4.9" path="device/kernel/ysl" remote="codelinaro"  />
+    <project name="MikuX-Dev/kernel_xiaomi_ysl_mikasa" path="device/kernel/ysl" remote="gitlab" />
+    <!-- project name="kernel/msm-4.9" path="device/kernel/ysl" remote="codelinaro"  /> -->
 
     <!-- DEVICE TREES -->
-    <project name="The-Bot-BB/device-xiaomi-ysl" path="device/xiaomi/ysl" remote="github" />
+    <project name="MikuX-Dev/device-xiaomi-ysl" path="device/xiaomi/ysl" remote="gitlab" />
 
     <!-- VENDOR TREE -->
-    <project name="The-Bot-BB/device_vendor_ysl" path="device/vendor/ysl" remote="github"/>
+    <project name="MikuX-Dev/device_name="MikuX-Dev/proprietary_vendor_xiaomi_ysl" path="device/vendor/ysl" remote="gitlab"/>
 
     <!-- /e/ vendor repo -->
     <project name="steadfasterX/android_vendor_e" path="vendor/e" remote="e" />
