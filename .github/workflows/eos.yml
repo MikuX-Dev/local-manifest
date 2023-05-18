@@ -30,6 +30,10 @@ jobs:
           lunch lineage_ysl-userdebug  # Replace <device_codename> with the desired device codename
           mka eos -j$(nproc --all)
 
+      - name: List Build Artifact
+        run: |
+          ls -la out/target/product/ysl/*.zip
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -41,12 +45,12 @@ jobs:
           draft: false
           prerelease: false
 
-- name: Upload Build Artifact
-  uses: actions/upload-release-asset@v1
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  with:
-    upload_url: ${{ steps.create_release.outputs.upload_url }}
-    asset_path: out/target/product/ysl/eos-${{ github.sha }}.zip
-    asset_name: eos-${{ github.sha }}.zip
-    asset_content_type: application/zip
+      - name: Upload Build Artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: out/target/product/ysl/eos-${{ github.sha }}.zip
+          asset_name: eos-${{ github.sha }}.zip
+          asset_content_type: application/zip
