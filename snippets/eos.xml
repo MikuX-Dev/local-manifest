@@ -8,7 +8,7 @@
 	   fetch="https://github.com/sfX-Android/" />
  
     <remote name="MikuX-Dev" 
-	   fetch="https://github.com/MikuX-Dev/" />
+	   fetch="https://gitlab.com/MikuX-Dev/" />
 	   
     <!--remote name="codelinaro"
 	        fetch="https://git.codelinaro.org/clo/la/kernel/msm-4.9"
