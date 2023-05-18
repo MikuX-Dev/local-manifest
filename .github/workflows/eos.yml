@@ -27,7 +27,15 @@ jobs:
         run: |
           repo init -u https://github.com/MikuX-Dev/local-manifest.git -b main --git-lfs
           repo sync -j$(nproc --all) --current-branch --no-tags --no-clone-bundle
-          
+
+      - name: Cache
+        uses: actions/cache@v1.2.1
+        with:
+          path: my_cache_directory
+          key: my_cache_key
+          restore-keys: |
+            my_restore_key1
+            my_restore_key2
 
       - name: Build AOSP
         run: |
@@ -38,6 +46,24 @@ jobs:
       - name: List Build Artifact
         run: |
           ls -la out/target/product/ysl/*.zip
+
+      - name: Test AOSP
+        run: |
+          # Perform automated tests for the AOSP ROM
+          # Include commands to execute tests or test suites
+
+      - name: Fix Bugs
+        run: |
+          # Implement bug fixes in the source code
+          # Use appropriate debugging techniques, code changes, and testing to resolve the bugs
+
+      - name: Build Fixed AOSP
+        run: |
+          # Rebuild the AOSP ROM after applying bug fixes
+
+      - name: Test Fixed AOSP
+        run: |
+          # Perform tests on the fixed AOSP ROM to validate the bug fixes
 
       - name: Create Release
         id: create_release
@@ -64,8 +90,4 @@ jobs:
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: out/target/product/ysl/eos-${{ github.sha }}.zip
-          asset_name: eos-${{ github.sha }}.zip
-          asset_content_type: application/zip
+
