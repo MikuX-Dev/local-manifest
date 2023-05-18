@@ -1,0 +1,29 @@
+name: Sync GitLab changes to GitHub
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch name if needed
+
+jobs:
+  sync_changes:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Your GitHub Username"
+          git config --global user.email "your-email@example.com"
+
+      - name: Fetch GitLab changes
+        run: git remote add gitlab https://gitlab.e.foundation/e/os/releases.git && git fetch gitlab
+
+      - name: Merge changes from GitLab to GitHub
+        run: |
+          git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
+          git checkout -b gitlab_branch gitlab/default_branch_name
+          git merge origin/gitlab_branch --allow-unrelated-histories
+          git push origin HEAD:main
