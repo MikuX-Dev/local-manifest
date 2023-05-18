@@ -28,7 +28,7 @@
     <project name="MikuX-Dev/device-xiaomi-ysl" path="device/xiaomi/ysl" remote="gitlab" />
 
     <!-- VENDOR TREE -->
-    <project name="MikuX-Dev/device_name="MikuX-Dev/proprietary_vendor_xiaomi_ysl" path="device/vendor/ysl" remote="gitlab"/>
+    <project name="MikuX-Dev/proprietary_vendor_xiaomi_ysl" path="device/vendor/ysl" remote="gitlab"/>
 
     <!-- /e/ vendor repo -->
     <project name="steadfasterX/android_vendor_e" path="vendor/e" remote="e" />
