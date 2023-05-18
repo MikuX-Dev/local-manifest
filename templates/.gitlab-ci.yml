@@ -1,0 +1,86 @@
+variables:
+  BRANCHES: "v1-nougat v1-oreo v1-pie"
+
+stages:
+  - manifest
+  - test
+  - qa
+  - build
+
+.update-manifest:
+  image:
+    name: "registry.gitlab.e.foundation/e/os/docker-lineage-cicd:prod"
+    entrypoint: [""]
+  stage: manifest
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_E_ROBOT_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - git remote set-url origin ssh://git@gitlab.e.foundation/$CI_PROJECT_PATH.git
+    - git config --global user.name "$GITLAB_USER_NAME"
+    - git config --global user.email "$GITLAB_USER_EMAIL"
+  script:
+    - mkdir "$SRC_DIR/$CI_COMMIT_REF_NAME" || true
+    - cd "$SRC_DIR/$CI_COMMIT_REF_NAME"
+    - repo init --depth 1 -u $REPO -b $CI_COMMIT_REF_NAME
+    - repo sync -c --force-sync --force-sync --force-remove-dirty --prune
+    - repo manifest -r -o $CI_PROJECT_DIR/default.xml
+    - cd $CI_PROJECT_DIR
+    - git add .
+    - git commit -m "Update $CI_COMMIT_REF_NAME manifest" || true
+    - git push origin HEAD:$CI_COMMIT_REF_NAME
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: always
+  tags:
+    - generate-e-manifest
+
+.check-version:
+  image: "registry.gitlab.e.foundation/e/tools/docker-tools:latest"
+  stage: test
+  script:
+    - curl -s https://gitlab.e.foundation/e/os/releases/-/raw/master/check-version.sh -o check-version.sh && chmod +x check-version.sh
+    - ./check-version.sh
+  rules:
+    - if: '$CI_COMMIT_TAG'
+      when: always
+    - when: never
+  tags:
+    - generic
+
+
+.trigger-build:
+  stage: build
+  variables:
+    BRANCH_NAME: ${CI_COMMIT_REF_NAME}
+    DEVICES: ${DEVICES}
+    REPO: ${CI_PROJECT_URL}
+    TAG_NAME: ${CI_COMMIT_TAG}
+    PUBLISH_STAGING_AUTOMATICALLY: "true"
+    USER_BUILD: "false"
+  trigger:
+    project: "e/priv/os/build"
+    branch: ${BUILD_BRANCH}
+  rules:
+    - if: '$CI_COMMIT_TAG'
+      when: manual
+    - when: never
+
+.trigger-build-dev:
+  extends: .trigger-build
+  variables:
+    RELEASE_TYPE: dev
+
+.trigger-build-stable:
+  extends: .trigger-build
+  variables:
+    RELEASE_TYPE: stable
+
+.trigger-build-test:
+  extends: .trigger-build
+  variables:
+    RELEASE_TYPE: test
