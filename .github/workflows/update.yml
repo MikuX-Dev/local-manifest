@@ -15,8 +15,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name MikuX-Dev 
-          git config --global user.email abinishanth3464@gmail.com
+          git config --global user.name "MikuX-Dev"
+          git config --global user.email "abinishanth3464@gmail.com"
 
       - name: Fetch GitLab changes
         run: git remote add gitlab https://gitlab.e.foundation/e/os/releases.git && git fetch gitlab
@@ -25,4 +25,5 @@ jobs:
         run: |
           git remote set-url origin https://github.com/MikuX-Dev/local-manifest.git
           git merge gitlab/master --allow-unrelated-histories 
+          git pull origin master --allow-unrelated-histories  # Added git pull command
           git push origin HEAD:master
