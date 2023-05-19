@@ -32,15 +32,6 @@ jobs:
           #curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/snippets/calyxos.xml -o .repo/local_manifests/calyxos.xml
           repo sync -j$(nproc --all) --no-tags --no-clone-bundle
 
-      - name: Cache
-        uses: actions/cache@v1.2.1
-        with:
-          path: my_cache_directory
-          key: my_cache_key
-          restore-keys: |
-            my_restore_key1
-            my_restore_key2
-
       - name: Build AOSP
         run: |
           source build/envsetup.sh
