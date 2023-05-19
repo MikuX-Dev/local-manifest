@@ -25,9 +25,7 @@ jobs:
 
       - name: Download AOSP source code
         run: |
-          mkdir -p .repo/local_manifests
-          git clone https://github.com/MikuX-Dev/local-manifest.git .repo/local_manifests
-          repo init -u https://gitlab.e.foundation/e/os/releases.git --depth=1 -b v1-t 
+          repo init -u https://github.com/MikuX-Dev/local-manifest.git b main 
           repo sync -j$(nproc --all) --current-branch --no-tags --no-clone-bundle
 
       - name: Cache
