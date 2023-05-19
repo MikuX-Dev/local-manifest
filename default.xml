@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  
-  <include="snippets/calyxos.xml" />
-  <include="snippets/device.xml" />
-  
-  </manifest>
+    <remote name="aosp" fetch="https://gitlab.e.foundation/e/os/releases.git" />
+    <remote name="mikux" fetch="https://github.com/MikuX-Dev/local-manifest" />
+
+    <default revision="v1-t"
+             remote="aosp"
+             sync-j="4"
+             sync-c="true" />
+
+    <!-- Device-specific manifest -->
+    <project name="MikuX-Dev/local-manifest" path=".repo/local_manifests" remote="mikux" revision="main" />
+
+    <!-- CalyxOS manifest -->
+    <project name="MikuX-Dev/local-manifest" path=".repo/local_manifests" remote="mikux" revision="main" />
+
+</manifest>
