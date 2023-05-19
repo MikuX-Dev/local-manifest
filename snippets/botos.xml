@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest> 
-
-    <remote name="BB-BotOS"
-            fetch="https://github.com/BB-BotOS/"
-	        revision="refs/heads/BotOS-1.0" />
