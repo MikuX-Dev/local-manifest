@@ -90,4 +90,10 @@ jobs:
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Clean Up
+        run: |
+          # Remove any build artifacts or generated files
+          make clean
+          rm -rf out/
 
