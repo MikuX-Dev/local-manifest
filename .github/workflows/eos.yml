@@ -27,12 +27,12 @@ jobs:
         run: |
           mkdir -p .github/cache
           
-     - name: Delete Older Build Artifacts
-       run: |
-          # Replace <desired-retention-limit> with the number of desired retained artifacts
+      - name: Delete Older Build Artifacts
+        run: |
+          # Specify the desired retention limit
+          RETENTION_LIMIT=2
           # Replace <cache-directory> with the path to your cache directory
-          # Delete older artifacts using appropriate commands or scripts
-          ls -t .github/cache | tail -n 3 | xargs rm
+          find .github/cache -type f -name "eos-*.zip" -printf "%T@ %p\n" | sort -r | tail -n +$((RETENTION_LIMIT+1)) | cut -d ' ' -f 2- | xargs rm -f
       
       - name: Download AOSP source code
         run: |
