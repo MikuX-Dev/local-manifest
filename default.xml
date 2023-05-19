@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <remote name="aosp" 
-            fetch="https://gitlab.e.foundation/e/os/releases.git" /> 
+            fetch="https://gitlab.e.foundation/e/os/releases/" /> 
     
     <remote name="github" 
-            fetch="https://github.com/MikuX-Dev/local-manifest.git" />
+            fetch="https://github.com/MikuX-Dev/" />
     
     <remote name="private"
-            fetch="ssh://git@github.com" />
+            fetch="ssh://git@github.com/" />
     
     <remote name="github"
             fetch="https://github.com/" />
