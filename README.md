@@ -4,8 +4,6 @@ BotOS
 [![Build AOSP](https://github.com/MikuX-Dev/local-manifest/actions/workflows/eos.yml/badge.svg)](https://github.com/MikuX-Dev/local-manifest/actions/workflows/eos.yml)
 
 
-[![Release](https://github.com/MikuX-Dev/local-manifest/actions/workflows/eos.yml/badge.svg?event=release)](https://github.com/MikuX-Dev/local-manifest/actions/workflows/eos.yml)
-
 
 Getting started
 ---------------
