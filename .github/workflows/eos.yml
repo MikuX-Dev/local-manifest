@@ -28,7 +28,7 @@ jobs:
           repo init --depth=1 https://gitlab.e.foundation/e/os/releases -b v1-t 
           rm -rf .repo/local_manifests
           mkdir -p .repo/local_manifests
-          curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/snippets/device.xml -o .repo/local_manifests/device.xml
+          curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/device.xml -o .repo/local_manifests/device.xml
           #curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/snippets/calyxos.xml -o .repo/local_manifests/calyxos.xml
           repo sync -j$(nproc --all) --no-tags --no-clone-bundle
 
