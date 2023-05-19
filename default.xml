@@ -1317,7 +1317,6 @@
   
   <include name="snippets/calyxos.xml" />
   <include name="snippets/eos.xml" />
-  <include name="remove.xml" />
   
 
 </manifest>
