@@ -25,6 +25,6 @@
     <!-- project name="MikuX-Dev/local-manifest" path=".repo/local_manifests" remote="mikux" revision="main" /> -->
     
     <!-- include name="snippets/calyxos.xml" /> -->
-    <include name="snippets/device.xml" />
+    <!-- include name="snippets/device.xml" /> -->
 
 </manifest>
