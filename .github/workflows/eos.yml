@@ -90,5 +90,5 @@ jobs:
         run: |
           # Remove any build artifacts or generated files
           make clean
-          rm -rf out/
+          rm -rf out/*
 
