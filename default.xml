@@ -3,6 +3,9 @@
     <remote name="aosp" 
             fetch="https://gitlab.e.foundation/e/os/releases.git" /> 
     
+    <remote name="github" 
+            fetch="https://github.com/MikuX-Dev/local-manifest.git" />
+    
     <default revision="v1-t"
              remote="aosp"
              sync-j="4"
