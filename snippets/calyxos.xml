@@ -2,8 +2,7 @@
 <manifest>      
       
     <remote name="CalyxOS"
-	        fetch="https://github.com/CalyxOS/"
-	        revision="refs/heads/android13" />  
+	    fetch="https://github.com/CalyxOS/" />  
     
     <!-- CalyxOS Apps -->
 	   
