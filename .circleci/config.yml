@@ -44,10 +44,10 @@ jobs:
           name: Download AOSP source code
           command: |
             repo init --depth=1 https://gitlab.e.foundation/e/os/releases -b v1-t 
-            # rm -rf .repo/local_manifests
-            # mkdir -p .repo/local_manifests
-            # curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/device.xml -o .repo/local_manifests/device.xml
-            # curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/snippets/calyxos.xml -o .repo/local_manifests/calyxos.xml
+            rm -rf .repo/local_manifests
+            mkdir -p .repo/local_manifests
+            curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/device.xml -o .repo/local_manifests/device.xml
+            curl https://github.com/MikuX-Dev/local-manifest/-/raw/main/snippets/calyxos.xml -o .repo/local_manifests/calyxos.xml
             repo sync -j$(nproc --all) --no-tags --no-clone-bundle
       
       - run:
@@ -82,22 +82,21 @@ jobs:
       - run:
           name: Test Fixed AOSP
           command: |
-        # Perform tests on the fixed AOSP ROM to validate the bug fixes
+            # Perform tests on the fixed AOSP ROM to validate the bug fixes
   
       - run:
           name: Create Release
           command: |
-        # Create a release using CircleCI API or any other desired method
+            # Create a release using CircleCI API or any other desired method
   
       - run:
           name: Upload Build Artifact
           command: |
-        # Upload the build artifact to the desired location
+            # Upload the build artifact to the desired location
   
       - run:
          name: Clean Up
          command: |
            # Remove any build artifacts or generated files
-            make clean
+           make clean
            # rm -rf out/*
-
