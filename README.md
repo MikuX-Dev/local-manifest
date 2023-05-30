@@ -1,7 +1,6 @@
 BotOS
 =====
 
-[![Build AOSP](https://github.com/MikuX-Dev/local-manifest/actions/workflows/eos.yml/badge.svg)](https://github.com/MikuX-Dev/local-manifest/actions/workflows/eos.yml)
 
 
 
